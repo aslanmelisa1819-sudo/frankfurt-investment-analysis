@@ -33,6 +33,11 @@ df['annual_profit_est'] = df.apply(calculate_dynamic_profit, axis=1)
 # 4. Header Section
 st.markdown("# 🚀 The Multi-Million Euro Decision")
 st.markdown("### Frankfurt Autonomous Retail Strategy: €280K - €2M Profit Potential")
+st.markdown("""
+*A simulation of where Amazon Go-style cashierless stores would thrive in Frankfurt — 
+using real demographic data to identify districts with the right mix of tech-savvy customers, 
+high foot traffic, and low competition.*
+""")
 st.markdown("---")
 
 # 5. Sidebar Filters
@@ -53,15 +58,15 @@ col_left, col_right = st.columns([2, 1])
 
 with col_left:
     st.subheader("📍 Investment Heatmap")
-    fig = px.scatter_mapbox(filtered_df, lat="lat", lon="lon", size="foot_traffic", 
+    fig = px.scatter_map(filtered_df, lat="lat", lon="lon", size="foot_traffic", 
                              color="annual_profit_est", hover_name="District",
                              color_continuous_scale="Viridis", zoom=11, height=500)
-    fig.update_layout(mapbox_style="carto-darkmatter", margin={"r":0,"t":0,"l":0,"b":0})
-    st.plotly_chart(fig, use_container_width=True)
+    fig.update_layout(map_style="carto-darkmatter", margin={"r":0,"t":0,"l":0,"b":0})
+    st.plotly_chart(fig, width='stretch')
 
 with col_right:
     st.subheader("📊 Profit vs. Tech Readiness")
     fig2 = px.bar(filtered_df.sort_values("annual_profit_est"), x="District", y="annual_profit_est", 
                   color="avg_age", labels={"annual_profit_est": "Est. Annual Profit (€)"},
                   color_continuous_scale="RdYlGn_r")
-    st.plotly_chart(fig2, use_container_width=True)
+    st.plotly_chart(fig2, width='stretch')
