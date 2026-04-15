@@ -38,21 +38,6 @@ Autonomous retail (cashierless stores) is one of the fastest-growing segments in
 
 ---
 
-## 🖥️ Screenshots
-
-<table>
-  <tr>
-    <td><img src="assets/screenshot1.png" alt="Dashboard Overview"/></td>
-    <td><img src="assets/screenshot2.png" alt="Scorecard & Radar"/></td>
-  </tr>
-  <tr>
-    <td><em>Investment Heatmap + KPIs</em></td>
-    <td><em>District Scorecard + Radar + Sensitivity</em></td>
-  </tr>
-</table>
-
----
-
 ## 💡 Key Insights
 
 - **Westend** has the highest investment score (92) despite mid-range foot traffic — driven by high income density and low competitor saturation relative to its purchasing power
@@ -87,9 +72,6 @@ streamlit run app.py
 frankfurt-investment-analysis/
 ├── app.py                  # Main Streamlit application
 ├── requirements.txt        # Dependencies
-├── assets/
-│   ├── screenshot1.png     # Dashboard screenshot
-│   └── screenshot2.png     # Scorecard screenshot
 └── README.md
 ```
 
